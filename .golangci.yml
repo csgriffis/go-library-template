@@ -4,10 +4,11 @@ run:
   allow-parallel-runners: true
 
 linters:
-  enable-all: true
+  # https://golangci-lint.run/usage/configuration/
 
 linters-settings:
   gofmt:
     rewrite-rules:
+      # ensure `any` is used instead of `interface{}` - https://tip.golang.org/doc/go1.18
       - pattern: 'interface{}'
         replacement: 'any'
